@@ -15,7 +15,8 @@ static int InitNumber()
     catch (Exception exc)
     {
         System.Console.WriteLine($"Ошибка ввода! {exc.Message}");
-        return 0;
+        System.Console.WriteLine("Введите пятизначное число: ");
+        return int.Parse(Console.ReadLine() ??"");
     }
 }
 
@@ -23,10 +24,10 @@ static void Result(int number)
 {
     if(number / 10000 == number % 10 && number / 1000 % 10 == number % 100 / 10)
     {
-        System.Console.WriteLine("correct");
+        System.Console.WriteLine("Является палиндромом!");
     }
     else
     {
-        System.Console.WriteLine("!!!!");
+        System.Console.WriteLine("Не является палиндромом");
     }
 }
